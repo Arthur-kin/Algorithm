@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
 //Insertion_sort function
 //從第二位開始對照左邊的值的大小 大的話就交換
-void insertion_sort(std::vector<int>&A){
+void insertion_sort(vector<int>&A){
     int n = A.size();
     for (int i= 1;i < n;++i){
         int key = A[i];
@@ -17,12 +18,12 @@ void insertion_sort(std::vector<int>&A){
 }
 
 int main(){
-    std::vector<int> A = {4, 3, 9, 1};
+    vector<int> A = {4, 3, 9, 1};
     insertion_sort(A);
     for (int i = 0;i < A.size(); ++i){
-        std::cout << A[i] << "";
+        cout << A[i] << "";
     }
-    std::cout << "\n";
+    cout << "\n";
     
     return 0;
 }
