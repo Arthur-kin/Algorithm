@@ -74,5 +74,6 @@ int main(){
     for (int num : A) {
         cout << num << " ";
     }
+    return 0;
 
 }
