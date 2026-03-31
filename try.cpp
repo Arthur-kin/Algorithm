@@ -14,6 +14,5 @@ int main()
     std::cout << "Hello World\n";
     int d = 2;
     int e = 2;
-    int f = 2;
     return 0;
 }
