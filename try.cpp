@@ -12,5 +12,6 @@ int main()
     std::cout << b;
     std::cout << c;
     std::cout << "Hello World\n";
+    int d = 2;
     return 0;
 }
