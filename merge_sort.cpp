@@ -5,7 +5,7 @@ using namespace std;
 
 void merge(vector<int>& A, int p, int q, int r){
     
-    int n_L = q-p+1;
+    int n_L = q-p+1;//中間點的左邊有幾個元素，包含中間點q
     int n_R = r-q;
     vector<int> L(n_L);
     vector<int> R(n_R);
@@ -19,8 +19,9 @@ void merge(vector<int>& A, int p, int q, int r){
     int i = 0;
     int j = 0;
     int k = p;
-    //兩個merge
+    //兩個merge,條件因C++的vector是從0開始的 所以設<n_L和<n_R
     while( i<n_L && j<n_R){
+        //這邊用<=的話 就會穩定排序 因為如果兩個元素相同 就會先把左邊的放進去
         if(L[i] <= R[j]){
             A[k] = L[i];
             ++i;        
@@ -45,7 +46,7 @@ void merge(vector<int>& A, int p, int q, int r){
 }
 
 void merge_sort(vector<int>& A, int p, int r){
-
+    //如果p>=r的話 就代表只有一個元素了 就不需要排序了 其實在C++裡面 這個條件也可以寫成p==r 因為不會有p>r的情況 但是寫成p>=r的話 就比較保險一點
     if( p >= r){
         return;
     }
