@@ -13,3 +13,11 @@
 
 # --- 作業系統產生的檔案 ---
 .DS_Store
+
+# 擋掉所有名叫 .venv 的資料夾
+.venv/
+venv/
+
+# 擋掉 Python 編譯產生的快取
+__pycache__/
+*.pyc
