@@ -4,39 +4,40 @@
 
 using namespace std;
 
-void radix_sort(vector<int>& A){
-	int n = A[O];
-	int digit = 0;
-	while(n != 0){
-		n /= 10;
-		++digit;
+
+void counting_sort_for_radix(vector<int>& A, int exp){
+    vector<int> B(A.size(),0);
+	vector<int> count(10,0); //因為是十進位 0-9 共10個數字
+
+	for (int num : A){
+		int digit = (num / exp) % 10;//找到對應位數以上的數字 然後在用%10找餘數
+		++count[digit];
 	}
-	for (int i = 0; i < digit; ++i){}
-    
+
+	for (int i = 1; i <count.size(); ++i){
+		count[i] = count[i] + count[i-1];//也可以寫成 count[i] += count[i-1];
+	}
+
+	for (int i = A.size() - 1; i >= 0; --i){
+		int digit = (A[i] / exp) % 10;
+		B[count[digit] - 1] = A[i];
+		--count[digit];
+	}
+	A = B;
 }
 
-void counting_sort(vector<int>& A ){
-    int max_number = *max_element(A.begin(),A.end());//找到A裡面最大的數字 因為count陣列的大小要是最大數字+1
-    vector<int> count(max_number+1,0);//建立一個count陣列 來記錄0->max_number數字出現的次數
-    
-    for (int num : A){
-        ++count[num];
-    }
-    
-    for(int i = 1; i < count.size();++i){
-        count[i] = count[i] + count[i-1];//把count陣列改成前綴和陣列 這樣就可以知道每個數字應該放在output陣列的哪裡
-    }
-    
-    vector<int> B(A.size(),0);//建立一個output陣列 來存放排序後的結果
-    
-    for (int num : A){
-        B[count[num]-1] = num;
-        --count[num];//把count陣列裡面對應的數字減一 因為已經放了一個了
-    }
-    A = B;
+void radix_sort(vector<int>& A){
+	if (A.empty()) return; 
+
+	int max_number =*max_element(A.begin(),A.end());
+
+	for (int exp = 1; max_number/exp > 0; exp *= 10){
+		counting_sort_for_radix(A, exp);
+	}
 }
+
 int main(){
-	vector<int> A = {345 ,846 ,123 ,567};
+	vector<int> A = {345 ,846 ,123 ,567, 789 ,523};
 	cout << "排序前: ";
 	for (int num : A) {
 		cout << num << " ";
