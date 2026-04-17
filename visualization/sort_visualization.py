@@ -1,6 +1,4 @@
 import matplotlib
-matplotlib.use('TkAgg') # 強制使用 TkInter 顯示視窗
-import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import random
