@@ -9,20 +9,20 @@ public:
   }
 
   int GetAns(vector<int> &coins, int total, int idx, vector<vector<int>> &dp) {
-    if (!total) {
+    if (!total) {// 達陣條件
       return 1;
     }
 
-    if (dp[idx][total] >= 0) {
+    if (dp[idx][total] >= 0) {// 快取命中
       return dp[idx][total];
     }
 
-    int ans = idx ? GetAns(coins, total, idx - 1, dp) : 0;
+    int ans = idx ? GetAns(coins, total, idx - 1, dp) : 0;// 分支 A：不使用這個硬幣
     if (total >= coins[idx]) {
-      ans += GetAns(coins, total - coins[idx], idx, dp);
+      ans += GetAns(coins, total - coins[idx], idx, dp);// 分支 B：使用這個硬幣
     }
 
-    dp[idx][total] = ans;
+    dp[idx][total] = ans;// 寫入快取
     return ans;
   }
 };
