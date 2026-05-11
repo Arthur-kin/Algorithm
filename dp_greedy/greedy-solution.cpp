@@ -18,6 +18,6 @@ class Solution {
       }
       max_count = max(max_count, count);// 最后一个数的count 因為最後一個數的count不會在迴圈裡面被更新
 
-      return max(n & 1, (max_count << 1) - n);
+      return max(n & 1, (max_count << 1) - n);// 意思是如果有一家獨大(right)的話 就一定是true，如果是勢均力敵的話 右邊一定小於0 左邊就看n的奇偶性了，如果n是偶數的話 就是0，如果n是奇數的話 就是1
     }
 };
