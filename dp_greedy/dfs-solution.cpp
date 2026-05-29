@@ -21,7 +21,7 @@ void DFS(int cur_r, int cur_c, int source_color, vector<vector<int>> &x,
     }
 
     state[nr][nc] = 1;
-    DFS(nr, nc, source_color, x, state, ans, target_color);
+    DFS(nr, nc, source_color, x, state, ans, target_color);// 找到就繼續執行
   }
 }
 
