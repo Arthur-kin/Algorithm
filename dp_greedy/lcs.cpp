@@ -20,7 +20,7 @@ public:
       }
 
       cur ^= 1, pre ^= 1;
-    }
+    }   
 
     return t[pre][m - 1];
   }
