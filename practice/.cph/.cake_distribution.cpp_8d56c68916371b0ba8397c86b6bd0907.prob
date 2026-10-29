@@ -1,0 +1,1 @@
+{"name":"Local: cake_distribution","url":"/home/arthur/Algorithm/practice/cake_distribution.cpp","tests":[{"id":1781522026566,"input":"3 3\n5 8 6","output":"5"},{"id":1781522039504,"input":"2 11\n2 5","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/arthur/Algorithm/practice/cake_distribution.cpp","group":"local","local":true}

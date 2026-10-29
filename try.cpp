@@ -1,7 +1,11 @@
-#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
 
-int main()
+
+signed main()
 {
+    
     int a = 1;//hellp
 
     a += 2;
@@ -16,4 +20,7 @@ int main()
     int d = 2;
     int e = 2;
     return 0;
+    vector<int> v;
+    for(int i=0; i<n; i++){}
+    FOR(i, 0, n)
 }

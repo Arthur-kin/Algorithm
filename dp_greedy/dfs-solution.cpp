@@ -21,7 +21,7 @@ void DFS(int cur_r, int cur_c, int source_color, vector<vector<int>> &x,
     }
 
     state[nr][nc] = 1;
-    DFS(nr, nc, source_color, x, state, ans, target_color);// 找到就繼續執行
+    DFS(nr, nc, source_color, x, state, ans, target_color);//  【核心】直接大膽呼叫那個方向，前往下一層！ 會先一直往下走，直到抵達邊界或異色，才會回頭繼續探索其他方向
   }
 }
 

@@ -1,0 +1,1 @@
+{"name":"Local: dropping_test","url":"/home/arthur/Algorithm/practice/dropping_test.cpp","tests":[{"id":1781531361068,"input":"3 1\n5 0 2\n5 1 6","output":"83"},{"id":1781531371583,"input":"4 2\n1 2 7 9\n5 6 7 9","output":"100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/arthur/Algorithm/practice/dropping_test.cpp","group":"local","local":true}
